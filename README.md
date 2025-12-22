@@ -1,12 +1,10 @@
-# Arch Linux Bootc
+# Arch-base
 
-Reference [Arch Linux](https://archlinux.org/) container image preconfigured for [bootc](https://github.com/bootc-dev/bootc) usage.
-
-<img width="2335" height="1296" alt="image" src="https://github.com/user-attachments/assets/0a19ad09-fdb6-4b7f-96f0-28ae9df12889" />
+Base [Arch Linux](https://archlinux.org/) container image with [bootc](https://github.com/bootc-dev/bootc) for usage in custom images. Similar for what is [Universal Blue main image](https://github.com/ublue-os/main/tree/main) to Fedora. Build every day.
 
 <img width="2305" height="846" alt="image" src="https://github.com/user-attachments/assets/f496a2f4-0782-408c-b207-c7acdde2e5ac" />
 
-## Building
+## Building and running localy
 
 In order to get a running arch-bootc system you can run the following steps:
 ```shell
