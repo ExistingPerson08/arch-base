@@ -9,5 +9,6 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
 
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     /ctx/readonly.sh
-    
+
+LABEL containers.bootc 1
 RUN bootc container lint

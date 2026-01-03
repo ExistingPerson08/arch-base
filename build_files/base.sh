@@ -24,16 +24,29 @@ pacman -Syy
 # Install bootc
 pacman -S bootc --noconfirm
 
-# Install cosmic
-pacman -Sy --noconfirm --needed \
-    base-devel git \
-    networkmanager \
-    cosmic cosmic-session cosmic-greeter
+# Useful utilities
+pacman -S --noconfirm reflector sudo bash fastfetch nano openssh unzip tar flatpak fuse2 fzf just wl-clipboard
+pacman -S --noconfirm libmtp nss-mdns samba smbclient networkmanager udiskie udisks2 udisks2-btrfs lvm2 cups cups-browsed hplip wireguard-tools
+pacman -S --noconfirm distrobox podman squashfs-tools zstd
+
+# Codecs and media
+pacman -S --noconfirm ffmpeg ffmpegthumbnailer libcamera libcamera-tools libheif
 
 # Drivers
 pacman -S --noconfirm amd-ucode intel-ucode efibootmgr shim mesa libva-intel-driver libva-mesa-driver \
     vpl-gpu-rt vulkan-icd-loader vulkan-intel vulkan-radeon apparmor xf86-video-amdgpu zram-generator \
     lm_sensors intel-media-driver
+
+# Systemd services
+systemctl enable polkit.service \
+    NetworkManager.service \
+    cups.socket \
+    cups-browsed.service
+
+# Cleanup
+rm -rf \
+    /tmp/* \
+    /var/cache/pacman/pkg/*
 
 # Initramfs
 printf "systemdsystemconfdir=/etc/systemd/system\nsystemdsystemunitdir=/usr/lib/systemd/system\n" | tee /usr/lib/dracut/dracut.conf.d/30-bootcrew-fix-bootc-module.conf
