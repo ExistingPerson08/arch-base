@@ -1,3 +1,5 @@
+
+
 image_name := env("BUILD_IMAGE_NAME", "arch-base")
 image_tag := env("BUILD_IMAGE_TAG", "latest")
 base_dir := env("BUILD_BASE_DIR", ".")
@@ -26,8 +28,17 @@ generate-bootable-image $base_dir=base_dir $filesystem=filesystem:
     fi
     just bootc install to-disk --composefs-backend --via-loopback /data/bootable.img --filesystem "${filesystem}" --wipe --bootloader systemd
 
+generate-bootable-iso:
+    just --justfile Justfile-iso build-live
+
 build-the-fucking-image:
     sudo setenforce 0
     just build-containerfile
     just generate-bootable-image
+    sudo setenforce 1
+
+build-the-fucking-iso:
+    sudo setenforce 0
+    just build-containerfile
+    just generate-bootable-iso
     sudo setenforce 1
