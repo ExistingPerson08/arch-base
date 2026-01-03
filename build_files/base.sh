@@ -43,6 +43,10 @@ systemctl enable polkit.service \
     cups.socket \
     cups-browsed.service
 
+# Users
+groupadd -r avahi
+useradd -r -g avahi -d /var/run/avahi-daemon -s /usr/bin/nologin -c "Avahi mDNS/DNS-SD Stack" avahi
+
 # Cleanup
 rm -rf \
     /tmp/* \
