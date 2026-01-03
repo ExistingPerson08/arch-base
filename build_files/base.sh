@@ -18,6 +18,9 @@ pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.
 echo -e '[chaotic-aur]\nInclude = /etc/pacman.d/chaotic-mirrorlist' >> /etc/pacman.conf
 pacman -Syy
 
+# Enable other repos
+sed -i '/^#\[multilib\]/,+1 s/^#//' /etc/pacman.conf # multilib
+
 # Install bootc
 pacman -S bootc --noconfirm
 
