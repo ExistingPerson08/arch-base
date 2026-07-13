@@ -59,7 +59,7 @@ RUN pacman -S --noconfirm \
     ffmpeg ffmpegthumbnailer libcamera libcamera-tools libheif \
     amd-ucode intel-ucode efibootmgr shim mesa libva-intel-driver libva-mesa-driver \
     vpl-gpu-rt apparmor xf86-video-amdgpu zram-generator \
-    lm_sensors intel-media-driver git bootc openal ttf-twemoji curl cpio \
+    lm_sensors intel-media-driver git bootc openal ttf-twemoji woff2-font-awesome otf-font-awesome curl cpio \
     a2ps bluez-cups cups-pk-helper foomatic-db foomatic-db-engine foomatic-db-gutenprint-ppds \
     foomatic-db-nonfree foomatic-db-nonfree-ppds foomatic-db-ppds ghostscript gutenprint splix
 
