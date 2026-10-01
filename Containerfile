@@ -1,8 +1,8 @@
 FROM cgr.dev/chainguard/wolfi-base:latest AS rootfs
 
 # renovate: datasource=custom depName=archlinux-bootstrap
-ENV VERSION="2026.08.01"
-ENV SHASUM="9600cef264af08899eff8f8b9bb2dd141c748a0038b651256d335e489a8dd2f6"
+ENV VERSION="2026.09.01"
+ENV SHASUM="895661bdf6c64e91b7725874165fd05dd30c438d3ffec661671ab5cfb261ca58"
 
 RUN apk add gnutar zstd curl && \
     curl -fLOJ --retry 3 https://fastly.mirror.pkgbuild.com/iso/$VERSION/archlinux-bootstrap-x86_64.tar.zst && \
